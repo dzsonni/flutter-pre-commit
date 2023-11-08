@@ -5,7 +5,7 @@ def main():
     command = ['dart', 'format', '.', '--line-length=140']
 
     # Run the command using subprocess
-    result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    result = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
     # Print the output and error messages
     print(result.stdout.decode('utf-8'))
