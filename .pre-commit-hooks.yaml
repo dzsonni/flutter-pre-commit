@@ -1,15 +1,15 @@
 -   id: dart-format
     name: Format Dart Code
-    entry: dart_format
+    entry: dart_format.sh
     language: script
     files: \.dart$
 -   id: sort-imports
     name: Sort Dart Imports
-    entry: sort_imports
+    entry: sort_imports.sh
     language: script
     files: \.dart$
 -   id: dart-analyze
     name: Analyze Dart Code
-    entry: dart_analyze
+    entry: dart_analyze.sh
     language: script
     files: \.dart$
