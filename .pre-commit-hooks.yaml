@@ -3,7 +3,7 @@
     entry: dart_format
     language: python
     files: \.dart$
--   id: sort_imports
+-   id: sort-imports
     name: Sort Dart Imports
     entry: sort_imports
     language: python
