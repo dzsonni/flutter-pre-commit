@@ -8,8 +8,8 @@ def main():
     result = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
     # Print the output and error messages
-    print(result.stdout)
-    print(result.stderr)
+    print(result.stdout.encode('utf-16', errors='ignore'))
+    print(result.stderr.encode('utf-16', errors='ignore'))
 
     # Check the return code and exit with an error if it's not 0
     if result.returncode != 0:
