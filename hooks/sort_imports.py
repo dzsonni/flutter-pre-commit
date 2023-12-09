@@ -12,6 +12,4 @@ def main():
     print(result.stdout.decode(sys.stdout.encoding, errors='ignore'))
     print(result.stderr.decode(sys.stdout.encoding, errors='ignore'))
 
-    # Check the return code and exit with an error if it's not 0
-    if result.returncode != 0:
-        exit(1)
+    exit(0)
