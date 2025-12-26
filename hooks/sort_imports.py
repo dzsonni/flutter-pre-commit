@@ -1,11 +1,17 @@
-import sys
 import subprocess
 
-def main():
-    # Define the command to run
-    command = ['dart', 'run', 'import_sorter:main']
+from hooks.fvm_utils import get_dart_executable
 
-    # Run the command using subprocess
-    result = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+def main():
+    dart = get_dart_executable()
+    command = [dart, 'run', 'import_sorter:main']
+
+    result = subprocess.run(command, text=True, capture_output=True)
+
+    if result.stdout:
+        print(result.stdout)
+    if result.stderr:
+        print(result.stderr)
 
     exit(0)

@@ -1,13 +1,17 @@
 import subprocess
 
+from hooks.fvm_utils import get_dart_executable
+
+
 def main():
-    # Define the command to run
-    command = ['dart', 'format', '.', '--line-length=140']
+    dart = get_dart_executable()
+    command = [dart, 'format', '.', '--line-length=140']
 
-    # Run the command using subprocess
-    result = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    result = subprocess.run(command, text=True, capture_output=True)
 
-    # Print the output and error messages
-    print(result.stdout)
-    print(result.stderr)
+    if result.stdout:
+        print(result.stdout)
+    if result.stderr:
+        print(result.stderr)
+
     exit(0)
